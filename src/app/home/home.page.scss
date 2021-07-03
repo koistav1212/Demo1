@@ -1,27 +1,104 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-title {
+  font-weight: 600;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-card {
+  width: 100%;
+  height: 160px;
+  box-shadow: none;
+  border-radius: 12px;
+  
+  img {
+      object-fit: cover;
+      width: 100%;
+      transform: scale(1.1, 1.1) rotate(1deg);
+      transition: 600ms all ease-in-out;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.swiper-slide-active {
+  transform: scale(1.05, 1.05);
 
-  color: #8c8c8c;
-
-  margin: 0;
+  ion-card {
+      img {
+          transform: scale(1, 1);
+      }
+  }
 }
 
-#container a {
-  text-decoration: none;
+.swiper-slide {
+  transition: 400ms all ease-in-out;
+}
+ion-header {
+  background: var(--ion-color-light);
+  ion-list {
+      background: var(--ion-color-primary);
+      border-radius: 0 0 20px 20px;
+      padding-bottom: 7vh;
+      ion-item {
+          ion-label {
+              font-weight: bold;
+              font-size: 1.2rem;
+              letter-spacing: 0.5px;
+          }
+          ion-avatar {
+              background: white;
+          }
+      }
+  }
+  .popover {
+      margin: 0 8px;
+      ion-searchbar {
+          --border-radius: 20px;
+          margin-top: -30px;
+      }
+  }
+}
+
+ion-content {
+  --background: var(--ion-color-light);
+  .title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--ion-color-dark);
+  }
+  ion-slides {
+      ion-card {
+          height: 30vh;
+          width: 100%;
+          border-radius: 10px;
+          ion-card-header {
+              ion-label, p {
+                  font-weight: bold;
+                  font-size: 1rem;
+                  color: var(--ion-color-dark);
+              }
+          }
+          ion-card-content {
+              img {
+                  height: 20vh;
+              }
+          }
+      }
+      .bgCard {
+       //   background-image: url('assets/imgs/bg.png');
+          background-position: fixed;
+          background-repeat: no-repeat;
+          background-size: contain;
+      }
+      .featured {
+          height: 40vh;
+          ion-card-header {
+              padding: 0;
+              background: var(--ion-color-tertiary);
+              img {
+                  height: 30vh;
+              }
+          }
+      }
+      .price {
+          align-self: end;
+          margin-top: 11px;
+      }
+  }
 }
